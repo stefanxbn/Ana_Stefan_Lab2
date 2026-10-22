@@ -10,6 +10,7 @@
   <ItemGroup>
     <Folder Include="Pages\BookPages\" />
     <Folder Include="Pages\AuthorPages\" />
+    <Folder Include="Pages\CategoryPages\" />
     <Folder Include="Pages\PublisherPages\" />
   </ItemGroup>
 
