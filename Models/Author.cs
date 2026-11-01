@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
 namespace Ana_Stefan_Lab2.Models
 {
@@ -12,8 +12,9 @@ namespace Ana_Stefan_Lab2.Models
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
-        public ICollection<Book>? Books { get; set; }
-
+        [Display(Name = "Full Name")]
         public string FullName => LastName + " " + FirstName;
+
+        public ICollection<Book>? Books { get; set; }
     }
 }
