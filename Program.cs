@@ -1,8 +1,14 @@
 using Microsoft.EntityFrameworkCore;
+using Ana_Stefan_Lab2.Data;
+using Microsoft.AspNetCore.Identity;
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("Ana_Stefan_Lab2Context") ?? throw new InvalidOperationException("Connection string 'Ana_Stefan_Lab2Context' not found.");
 
 builder.Services.AddDbContext<Ana_Stefan_Lab2Context>(options => options.UseSqlServer(connectionString));
+
+builder.Services.AddDbContext<LibraryIdentityContext>(options => options.UseSqlServer(connectionString));
+
+builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<LibraryIdentityContext>();
 
 // Add services to the container.
 builder.Services.AddRazorPages();
